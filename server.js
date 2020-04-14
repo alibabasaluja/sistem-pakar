@@ -13,6 +13,8 @@ const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const penyakitRouter = require('./routes/penyakit');
 const gejalaRouter = require('./routes/gejala');
+const rulesRouter = require('./routes/rules');
+const clientRouter = require('./routes/client');
 
 
 
@@ -38,5 +40,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/penyakit', penyakitRouter);
 app.use('/gejala', gejalaRouter);
+app.use('/rules', rulesRouter);
+app.use('/client', clientRouter);
 
 

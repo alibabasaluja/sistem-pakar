@@ -1,0 +1,51 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Kode Rule</th>
+        <th scope="col">Nama Penyakit</th>     
+        <% gejala.forEach(gejala => { %>  
+            <th scope="col"> <%= gejala.kode %> </th>
+        <% }) %> 
+        <th scope="col"> Submit </th>
+      </tr>
+    </thead>
+    <tbody>
+
+       <form action="rules" method="POST">
+      
+        <tr>
+            <th scope="col">
+                <div class="form-group">              
+                <input type="text" class="form-control" name="ruleKode">
+              </div> </th>
+            <th>
+                <div class="input-group mb-3">
+                   
+                    <select class="custom-select" id="inputGroupSelect01" name="rulePenyakit">
+                      <option selected >Choose...</option>
+                      <% penyakit.forEach(penyakit => { %>  
+                      <option value="<%= penyakit.id  %>"><%= penyakit.nama  %> </option>                     
+                      <% }) %> 
+                    </select>
+                  </div>
+            </th>
+
+            <% gejala.forEach(gejala => { %>                  
+                <th>
+                    <div class="form-group">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" name="checkbox<%=index%>"   value="<%= gejala.id %>"> 
+                          <label for=""> </label> 
+                          <% index++; %>                                              
+                        </div>           
+                      </div>
+                </th>             
+             <% }) %> 
+             <th><button type="submit" class="btn btn-primary">Submit</button></th>
+        </tr>       
+        
+    </form>
+    </tbody>
+    
+  </table>  
+  </table>
