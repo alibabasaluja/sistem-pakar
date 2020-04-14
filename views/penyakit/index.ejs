@@ -1,0 +1,33 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Kode</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Gejala</th>
+        <th scope="col">Solusi</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <% penyakit.forEach(penyakit =>{%>           
+            <tr>
+                <th scope="row"><%= penyakit.kode %></th>
+                <td><a href="/penyakit/<%= penyakit.id %>"> <%= penyakit.nama %></a></td>       
+                <td>-</td>
+                <td><%= penyakit.solusi %></td>
+                <td><a href="/penyakit/<%= penyakit.id %>/edit">Edit</a></td>     
+                <td>
+                  <%- include('../partials/_btn_delete', { url: '/penyakit/' + penyakit.id })  %> 
+                </td> 
+            </tr>            
+        <% }) %> 
+
+        
+    </tbody>
+    
+  </table>  
+  </table>
+
+  

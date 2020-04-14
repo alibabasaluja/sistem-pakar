@@ -1,0 +1,6 @@
+<h2>Edit Gejala</h2>
+
+<form method="POST" action="/gejala/<%= gejala.id %>?_method=PUT" >
+    <%- include('../partials/_form_fields_gejala.ejs') %>           
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

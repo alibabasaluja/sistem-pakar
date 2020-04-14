@@ -1,0 +1,29 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Kode</th>
+        <th scope="col">Nama Gejala</th>      
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <% gejala.forEach(gejala =>{%>           
+            <tr>
+                <th scope="row">           
+                 <%= gejala.kode %>
+                </th>
+                <td><a href="/gejala/<%= gejala.id %>"> <%= gejala.nama %> </a></td>                
+                <td><a href="/gejala/<%= gejala.id %>/edit">Edit</a></td>     
+                <td>
+                  <%- include('../partials/_btn_delete', { url: '/gejala/' + gejala.id })  %> 
+                </td>                
+            </tr>            
+        <% }) %> 
+
+        
+    </tbody>
+    
+  </table>  
+  </table>

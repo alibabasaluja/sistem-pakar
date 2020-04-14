@@ -1,0 +1,6 @@
+<h2>Edit Penyakit</h2>
+
+<form method="POST" action="/penyakit/<%= penyakit.id %>?_method=PUT" >
+    <%- include('../partials/_form_fields.ejs') %>           
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
